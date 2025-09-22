@@ -82,19 +82,27 @@ E-SpikeFormer的核心贡献是**脉冲发放近似（Spike Firing Approximation
 | QKFormer: Hierarchical Spiking Transformer using Q-K Attention | NeurIPS 2024 | [Forum](https://openreview.net/forum?id=AVd7DpiooC) | [GitHub](https://github.com/zhouchenlin2096/QKFormer) | 线性复杂度Q-K注意力结合分层结构；在ImageNet上85.65%。 | 通过多尺度脉冲和变形捷径，比Spikformer改进10.84%。 |
 | Spiking Transformer with Experts Mixture | NeurIPS 2024 | [Forum](https://openreview.net/forum?id=WcIeEtY3AG) | N/A | 脉冲驱动专家混合（SEMM）用于稀疏计算；在神经形态数据集上改进。 | 通过专家路由用于头/通道级效率，构建于基础脉冲Transformer之上。 |
 | Spiking Token Mixer (STMixer) | NeurIPS 2024 | [Abstract](https://proceedings.neurips.cc/paper_files/paper/2024/hash/e8c20cafe841cba3e31a17488dc9c3f1-Abstract-Conference.html) | [GitHub](https://github.com/brain-intelligence-lab/STMixer_demo) | 事件驱动结构结合conv/FC层；在低时间步匹配脉冲Transformer。 | 比先前脉冲Transformer改进了异步硬件兼容性。 |
-| Spiking Transformer: Introducing Accurate Addition-Only Spiking Self-Attention | CVPR 2025 | [Paper](https://openaccess.thecvf.com/content/CVPR2025/papers/Guo_Spiking_Transformer_Introducing_Accurate_Addition-Only_Spiking_Self-Attention_for_Transformer_CVPR_2025_paper.pdf) | N/A | A²OS²A机制结合混合神经元；在ImageNet上78.66%。 | 通过减少注意力中的信息损失，改进了Spikformer和Spike-driven。 |
-| Spiking Transformer with Spatial-Temporal Attention (STAtten) | CVPR 2025 | [Paper](https://openaccess.thecvf.com/content/CVPR2025/papers/Lee_Spiking_Transformer_with_Spatial-Temporal_Attention_CVPR_2025_paper.pdf) | [GitHub](https://github.com/Intelligent-Computing-Lab-Yale/STAtten) | 块状时空注意力；在CIFAR和神经形态数据上提升性能。 | 通过整合时间依赖，改进了Spikformer和Spike-driven V1/V2。 |
+| Spiking Transformer: Introducing Accurate Addition-Only Spiking Self-Attention | CVPR 2025 | [Paper](https://arxiv.org/abs/2503.00226) | N/A | A²OS²A机制结合混合神经元；在ImageNet上78.66%。 | 通过减少注意力中的信息损失，改进了Spikformer和Spike-driven。 |
+| Spiking Transformer with Spatial-Temporal Attention (STAtten) | CVPR 2025 | [Paper](https://ieeexplore.ieee.org/document/10890026) | [GitHub](https://github.com/Intelligent-Computing-Lab-Yale/STAtten) | 块状时空注意力；在CIFAR和神经形态数据上提升性能。 | 通过整合时间依赖，改进了Spikformer和Spike-driven V1/V2。 |
 | Rethinking Spiking Self-Attention: α-XNOR Similarity Calculation | CVPR 2025 | [Paper](https://ieeexplore.ieee.org/abstract/document/11095114) | N/A | α-XNOR用于脉冲中的更好相似性；增强多个架构。 | 通过修复脉冲查询/键中的点积问题，改进了Spikformer等。 |
 | Spike2Former: Efficient Spiking Transformer for High-performance Image Segmentation | AAAI 2025 | [Paper](https://arxiv.org/abs/2412.14587) | [GitHub](https://github.com/biclab/spike2former) | 归一化整数神经元用于稳定性；在ADE20K/Cityscapes上SOTA mIoU。 | 改进了先前Transformer的转换方法用于分割任务。 |
 | Spiking Transformer-CNN (Spike-TransCNN) | ICLR 2025 (reject) | [Paper](https://openreview.net/forum?id=zweyouirw7) | N/A (supp. mentioned) | 用于事件驱动检测的混合；在Gen1上更高mAP和更低能量。 | 首个CNN与脉冲Transformer的混合；改进了局部/全局特征融合。 |
 | Quantized Spike-driven Transformer (QSD-Transformer) | ICLR 2025 | [Paper](https://arxiv.org/abs/2501.13492) | [Github](https://github.com/bollossom/QSD-Transformer)  | 提出了一种复杂的双层优化策略。在底层，设计了一个信息增强型Leaky Integrate-and-Fire（IE-LIF）神经元来校正信息分布。在顶层，采用了一种细粒度蒸馏（Fine-Grained Distillation, FGD）方案，以使量化模型的行为与其全精度对应模型对齐。 | 将量化技术引入脉冲驱动谱系，旨在通过使用低比特宽度的参数来显著减少模型的内存占用和计算需求。
 
-#### 4.1 备注
+### 4.1 备注
 
 Spike-driven Transformer V2 (Meta-SpikeFormer)，ICLR 2024，与**SpikFormer(Zhou et al., 2023)** 和**Spike-driven Transformer(Yao et al., 2023b)** 作了比较。
 
-Spike2Former: Efficient Spiking Transformer for High-performance Image Segmentation，AAAI 2025，与**Spike-driven Transformer V2**，作了比较
+Spiking Transformer: Introducing Accurate Addition-Only Spiking Self-Attention，CVPR 2025，与**SpikFormer(Zhou et al., 2023)**和**Spike-driven Transformer(Yao et al., 2023b)**，以及一篇仅有arxiv预印本的Spikingformer: Spike-driven residual learning for transformer-based spiking neural network.
+
+Spiking Transformer with Spatial-Temporal Attention (STAtten)，CVPR2025，与**SpikFormer(Zhou et al., 2023)**和**Spike-driven Transformer**，以及一篇仅有arxiv预印本的Spikingformer: Spike-driven Residual Learning for Transformer-based Spiking Neural Network作了比较。
+
+Spike2Former: Efficient Spiking Transformer for High-performance Image Segmentation，AAAI 2025，与**Spike-driven Transformer V2**，作了比较。
 
 Spiking Transformer-CNN (Spike-TransCNN)，在ICLR2025被拒，但审稿人提到的问题主要是行文问题和创新程度问题，肯定了本文在目标识别数据集上取得了优异的成果（“这似乎却决于模块堆栈的数量”）。这篇文章的实验部分没有与竞争对手——各种改进型spiking transformer比较，与较新模型的对比仅仅是一些YOLO。
 
 Quantized Spike-driven Transformer (QSD-Transformer)，ICLR 2025，与**SpikFormer(Zhou et al., 2023)** 和**Spike-driven Transformer(Yao et al., 2023b)**及一些传统模型作了比较。
+
+## 5 注释
+
+本页面中对每篇工作内容的总结以大模型生成为主。本页面主要关注各模型随时间之发展脉络，以及相互之间的改进关系。
