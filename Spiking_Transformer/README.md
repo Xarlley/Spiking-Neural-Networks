@@ -73,7 +73,7 @@ E-SpikeFormer的核心贡献是**脉冲发放近似（Spike Firing Approximation
 | Masked Spiking Transformer (MST) | ICCV 2023 | [Paper](https://openaccess.thecvf.com/content/ICCV2023/papers/Wang_Masked_Spiking_Transformer_ICCV_2023_paper.pdf) | [GitHub](https://github.com/bic-L/Masked-Spiking-Transformer) | 使用ANN-to-SNN转换结合随机脉冲掩码（RSM）来修剪脉冲，在75%掩码比率下降低能量26.8%，而不损失性能。 | 通过受突触失败启发的掩码，改进了Spikformer和STNet的硬件兼容性和能量问题。 |
 | **Spike-driven Transformer** | NeurIPS 2023 | [Paper](https://proceedings.neurips.cc/paper_files/paper/2023/file/ca0f5358dbadda74b3049711887e9ead-Paper-Conference.pdf) | [GitHub](https://github.com/BICLab/Spike-Driven-Transformer) | 完全脉冲驱动设计，带有脉冲驱动自注意力（SDSA），仅使用加法；在ImageNet上实现77.1%，能量比香草注意力低87.2倍。 | 通过消除MAC操作并确保二进制脉冲通信，改进了Spikformer。 |
 | **Spike-driven Transformer V2 (Meta-SpikeFormer)** | ICLR 2024 | [Paper](https://openreview.net/pdf?id=1SIBN5Xyw7) | [GitHub](https://github.com/BICLab/Spike-Driven-Transformer-V2) | 元架构，探索脉冲驱动自注意力变体；支持分类、检测和分割；在ImageNet上80.0%。 | Spike-driven Transformer（V1）的直接扩展，提升了多功能性和性能，优于基于Conv的SNN。 |
-| Spikeformer: Training high-performance spiking neural network with transformer | Neurocomputing 2024(arxiv 2022)| [Paper](https://dl.acm.org/doi/10.1016/j.neucom.2024.127279) | [Github]() | 设计了卷积标记器 (CT) 模块，将时空注意力机制（STA）集成到Spikeformer中 | 出版较晚，在2022就已提出，属于直接源自Transformer的早期模型。 |
+| Spikeformer: Training high-performance spiking neural network with transformer | Neurocomputing 2024(arxiv 2022)| [Paper](https://dl.acm.org/doi/10.1016/j.neucom.2024.127279) | To be available | 设计了卷积标记器 (CT) 模块，将时空注意力机制（STA）集成到Spikeformer中 | 出版较晚，在2022就已提出，属于直接源自Transformer的早期模型。 |
 | DISTA: Denoising Spiking Transformer with Intrinsic Plasticity and Spatiotemporal Attention | ICLR 2024 | [Paper](https://openreview.net/pdf?id=mjDROBU93g) | N/A | 引入神经元级和网络级的时空注意力结合去噪；在CIFAR10上实现96.26%。 | 通过添加时间注意力和可塑性，构建于Spikformer之上，以克服仅空间限制。 |
 | STFormer: Spatial Temporal Spiking Transformer | ICLR 2024 | [Paper](https://openreview.net/pdf?id=wPK65O4pqS) | N/A | 具有空间和时间核心用于特征提取，带有脉冲引导注意力；在CIFAR10-DVS上SOTA（83.1%）。 | 通过优化LIF神经元放置和时空处理，改进了Spikformer和Spike-driven。 |
 | TIM: An Efficient Temporal Interaction Module for Spiking Transformer | IJCAI 2024 | [Paper](https://www.ijcai.org/proceedings/2024/0347.pdf) | [GitHub](https://github.com/BrainCog-X/Brain-Cog/tree/main/examples/TIM) | 基于卷积的模块增强时间处理；集成到Spikformer骨干中，在神经形态数据集上SOTA。 | 通过最小参数解决时间数据限制，构建于Spikformer之上。 |
@@ -99,9 +99,9 @@ Spiking Transformer with Spatial-Temporal Attention (STAtten)，CVPR2025，与**
 
 Spike2Former: Efficient Spiking Transformer for High-performance Image Segmentation，AAAI 2025，与**Spike-driven Transformer V2**，作了比较。
 
-Spiking Transformer-CNN (Spike-TransCNN)，在ICLR2025被拒，但审稿人提到的问题主要是行文问题和创新程度问题，肯定了本文在目标识别数据集上取得了优异的成果（“这似乎却决于模块堆栈的数量”）。这篇文章的实验部分没有与竞争对手——各种改进型spiking transformer比较，与较新模型的对比仅仅是一些YOLO。
+Spiking Transformer-CNN (Spike-TransCNN)，在ICLR2025被拒，但审稿人提到的问题主要是行文问题和创新程度问题，肯定了本文在目标识别数据集上取得了优异的成果（“这似乎取决于模块堆栈的数量”）。这篇文章的实验部分没有与竞争对手——各种改进型spiking transformer比较，与较新模型的对比仅仅是一些YOLO。
 
-Quantized Spike-driven Transformer (QSD-Transformer)，ICLR 2025，与**SpikFormer(Zhou et al., 2023)** 和**Spike-driven Transformer(Yao et al., 2023b)**及一些传统模型作了比较。
+Quantized Spike-driven Transformer (QSD-Transformer)，ICLR 2025，与**SpikFormer(Zhou et al., 2023)** 和**Spike-driven Transformer(Yao et al., 2023b)** 及一些传统模型作了比较。
 
 ## 5 注释
 
